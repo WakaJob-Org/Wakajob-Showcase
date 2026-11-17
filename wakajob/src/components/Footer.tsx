@@ -3,42 +3,64 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+    <footer className="bg-[#0b1d46] py-12 text-slate-300">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <span className="text-2xl font-bold text-white">Wakajob</span>
-            <p className="mt-2 text-sm text-gray-400">
-              Empowering workers and companies to connect, collaborate, and succeed together.
-            </p>
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#1b7af8] to-[#0b3ec6] text-lg font-black text-white shadow-lg shadow-blue-900/30">
+                W
+              </span>
+              <div>
+                <div className="text-2xl font-black text-white">Wakajob</div>
+                <div className="text-xs text-slate-400">Jobs. Abroad. Opportunities.</div>
+              </div>
+            </div>
+
+            <div className="text-sm text-slate-300">Made for Cameroon</div>
           </div>
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4">For Job Seekers</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">Browse Jobs</Link></li>
-              <li><Link href="#" className="hover:text-white">Career Advice</Link></li>
-              <li><Link href="#" className="hover:text-white">Create Resume</Link></li>
-            </ul>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div>
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white">Job Seekers</h4>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li><Link href="#" className="hover:text-white">Search Jobs</Link></li>
+                <li><Link href="#" className="hover:text-white">Internships</Link></li>
+                <li><Link href="#" className="hover:text-white">Career Tips</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white">Employers</h4>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li><Link href="#" className="hover:text-white">Post a Vacancy</Link></li>
+                <li><Link href="#" className="hover:text-white">Recruit Candidates</Link></li>
+                <li><Link href="#" className="hover:text-white">Pricing</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white">Resources</h4>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li><Link href="#" className="hover:text-white">Official Brand Kit</Link></li>
+                <li><Link href="#" className="hover:text-white">Help Center</Link></li>
+                <li><Link href="#" className="hover:text-white">Mobile App</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white">Legal & Privacy</h4>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:text-white">Terms of Service</Link></li>
+                <li><Link href="#" className="hover:text-white">Cookie Settings</Link></li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4">For Employers</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">Post a Job</Link></li>
-              <li><Link href="#" className="hover:text-white">Talent Search</Link></li>
-              <li><Link href="#" className="hover:text-white">Pricing Plans</Link></li>
-            </ul>
+
+          <div className="border-t border-slate-700 pt-6 text-xs text-slate-400">
+            &copy; {new Date().getFullYear()} Wakajob. All rights reserved.
           </div>
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="hover:text-white">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white">Contact</Link></li>
-              <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-gray-800 pt-8 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} Wakajob. All rights reserved.
         </div>
       </Container>
     </footer>

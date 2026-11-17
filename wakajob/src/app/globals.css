@@ -1,12 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  color: #171717;
-  background: #ffffff;
+  --wakajob-blue: #1c7cf9;
+  --wakajob-blue-dark: #0d3fc4;
+  --wakajob-navy: #0d1d46;
+  --wakajob-surface: #f5f7fb;
+  --wakajob-soft: #eaf2ff;
+  --wakajob-line: #dfe7f8;
+  --wakajob-text: #101828;
+  --wakajob-muted: #4f5d75;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #171717;
-  background: #ffffff;
+  color: var(--wakajob-text);
+  background: linear-gradient(180deg, #f6f8fc 0%, #edf3ff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(28, 124, 249, 0.2);
 }

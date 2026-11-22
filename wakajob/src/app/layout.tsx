@@ -37,8 +37,36 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Wakajob Showcase - Find Jobs & Hire Talent',
-  description: 'Wakajob links skill with opportunity quickly and effectively.',
+  metadataBase: new URL('https://wakajob.com'),
+  title: { default: 'Wakajob — Find Local Jobs in Cameroon', template: '%s | Wakajob' },
+  description: 'Find verified local jobs in Cameroon and apply with a simple, fast, mobile-friendly process. Discover opportunities near Yaoundé, Douala and across Cameroon.',
+  keywords: ['jobs in Cameroon', 'Cameroon jobs', 'local jobs', 'job vacancies Cameroon', 'Yaoundé jobs', 'Douala jobs', 'Wakajob'],
+  authors: [{ name: 'Wakajob' }],
+  creator: 'Wakajob',
+  publisher: 'Wakajob',
+  applicationName: 'Wakajob',
+  category: 'Jobs and Employment',
+  alternates: { canonical: '/', languages: { 'en-CM': '/' } },
+  openGraph: {
+    type: 'website',
+    locale: 'en_CM',
+    url: '/',
+    siteName: 'Wakajob',
+    title: 'Find Local Jobs Near You in Cameroon',
+    description: 'Discover verified local and remote jobs, connect with trusted employers, and apply through Wakajob.',
+    images: [{ url: '/black-carpenter.jpg', width: 900, height: 600, alt: 'Wakajob job opportunities' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wakajob — Find Jobs Near You',
+    description: 'Find verified jobs and employers across Cameroon.',
+    images: ['/black-carpenter.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
+  },
 };
 
 export default function RootLayout({

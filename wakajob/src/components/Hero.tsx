@@ -72,54 +72,6 @@ const WakajobLogo = ({
 export function WakajobLandingPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F8FD] text-[#0F172A] font-sans overflow-x-hidden">
-      {/* ================= TOP NAVIGATION ================= */}
-      <header className="w-full bg-white/95 backdrop-blur-sm border-b border-slate-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Brand + Tagline */}
-          <div className="flex items-center gap-5">
-            <WakajobLogo />
-            <div className="hidden sm:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-slate-400 uppercase border-l border-slate-200 pl-4">
-              <MapPin className="w-3.5 h-3.5 text-slate-400" />
-              <span>JOBS NEAR YOU</span>
-            </div>
-          </div>
-
-          {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-9 text-[15px] font-medium text-slate-600">
-            <a
-              href="#home"
-              className="text-[#1565D8] font-semibold relative py-6 after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[3px] after:bg-[#1565D8] after:rounded-t-full"
-            >
-              Home
-            </a>
-            <a
-              href="#features"
-              className="hover:text-[#1565D8] transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#how-it-works"
-              className="hover:text-[#1565D8] transition-colors"
-            >
-              How It Works
-            </a>
-            <a
-              href="#about"
-              className="hover:text-[#1565D8] transition-colors"
-            >
-              About
-            </a>
-          </nav>
-
-          {/* CTA Button */}
-          <button className="bg-[#1565D8] hover:bg-[#1152B2] text-white font-semibold text-sm px-5 py-2.5 rounded-full flex items-center gap-2 shadow-md shadow-blue-600/20 transition-all cursor-pointer">
-            <Download className="w-4 h-4" />
-            <span>Download App</span>
-          </button>
-        </div>
-      </header>
-
       {/* ================= HERO SECTION ================= */}
       <main className="relative flex-1 flex flex-col justify-between">
         {/* Background Decorative Blue Right Wave / Curve */}
@@ -461,9 +413,9 @@ export function WakajobLandingPage() {
 
                 {/* Smiling Young Black Man Looking at Smartphone */}
                 <img
-                  src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=900&q=85"
-                  alt="Young Cameroonian professional smiling while checking Wakajob on his phone"
-                  className="relative z-10 w-full h-full object-cover object-top"
+                  src="/black-carpenter.jpg"
+                  alt="Black carpenter working on a construction project"
+                  className="relative z-10 w-full h-full object-cover object-center"
                 />
               </div>
 

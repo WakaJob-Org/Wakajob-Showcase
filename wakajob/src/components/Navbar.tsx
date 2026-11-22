@@ -7,7 +7,7 @@ const navItems = ['Home', 'Features', 'How It Works', 'About'];
 
 export const Navbar = () => {
   return (
-    <header className="relative z-50 border-b border-slate-100 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/95 backdrop-blur-md">
       <Container className="flex h-20 items-center justify-between gap-4">
         <div className="flex items-center gap-5">
           <Link href="/" className="flex items-center gap-2">

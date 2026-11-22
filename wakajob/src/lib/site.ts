@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV === "production" && !process.env.NEXT_PUBLIC_SITE_URL) {
-  throw new Error("NEXT_PUBLIC_SITE_URL must be set for production builds.");
-}
 export const siteConfig = {
   name: "Wakajob",
   defaultTitle: "Wakajob | Find Jobs Near You in Cameroon",

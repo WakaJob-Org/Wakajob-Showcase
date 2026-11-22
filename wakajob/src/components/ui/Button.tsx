@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "light" | "outline-light";
 type Size = "md" | "lg";
 
 const base =
@@ -10,6 +10,8 @@ const base =
 const variants: Record<Variant, string> = {
   primary: "bg-brand-600 text-white shadow-card hover:bg-brand-700",
   secondary: "bg-brand-100 text-brand-700 hover:bg-brand-200",
+  light: "bg-white text-brand-700 shadow-card hover:bg-brand-50",
+  "outline-light": "border border-white/50 bg-transparent text-white hover:bg-white/10",
 };
 
 const sizes: Record<Size, string> = {

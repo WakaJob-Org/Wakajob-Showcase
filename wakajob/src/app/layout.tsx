@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
-import { inter, jakarta } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -43,7 +44,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="en">
       <body>
         <a
           href="#main"
@@ -51,6 +52,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <Header />
         {children}
         <Footer />
         <JsonLd data={[organizationSchema, websiteSchema]} />

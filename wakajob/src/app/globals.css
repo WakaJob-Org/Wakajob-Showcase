@@ -1,43 +1,30 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* Brand blues, sampled from the design. Verify with an eyedropper against the Figma/source. */
-  --color-brand-50:  #f2f7ff;
-  --color-brand-100: #e3edff;
-  --color-brand-200: #c6d9ff;
-  --color-brand-500: #2563eb;
-  --color-brand-600: #1553e0;
-  --color-brand-700: #0f42b8;
-  --color-brand-900: #0a1b4d;
-
-  --color-ink:       #0a1633;   /* headings */
-  --color-body:      #3b4560;   /* paragraph text */
-  --color-surface:   #f6f9ff;   /* light section background */
-  --color-success:   #12a150;
-
-  --font-sans:    var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, sans-serif;
-
-  --radius-card: 1rem;
-  --shadow-card: 0 8px 30px -12px rgb(21 83 224 / 0.25);
+:root {
+  --wakajob-blue: #1c7cf9;
+  --wakajob-blue-dark: #0d3fc4;
+  --wakajob-navy: #0d1d46;
+  --wakajob-surface: #f5f7fb;
+  --wakajob-soft: #eaf2ff;
+  --wakajob-line: #dfe7f8;
+  --wakajob-text: #101828;
+  --wakajob-muted: #4f5d75;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
-  body {
-    @apply bg-white font-sans text-body antialiased;
-  }
-  h1, h2, h3 {
-    @apply font-display text-ink tracking-tight;
-  }
-  :focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-600;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--wakajob-text);
+  background: linear-gradient(180deg, #f6f8fc 0%, #edf3ff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(28, 124, 249, 0.2);
 }

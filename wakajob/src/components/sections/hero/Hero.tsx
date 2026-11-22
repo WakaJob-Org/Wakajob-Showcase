@@ -3,9 +3,9 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { StoreBadge } from "@/components/ui/StoreBadge";
 import { TrustChecklist } from "./TrustChecklist";
+import { HeroVisual } from "./HeroVisual";
 import { heroContent } from "@/content/hero";
 import { siteConfig } from "@/lib/site";
-import { HeroVisual } from "./HeroVisual";
 
 export function Hero() {
   return (
@@ -41,8 +41,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Step 4: <HeroVisual /> goes here */}
-        <div aria-hidden="true" className="hidden min-h-96 rounded-3xl bg-brand-100 lg:block" />
+        <HeroVisual />
       </Container>
     </section>
   );

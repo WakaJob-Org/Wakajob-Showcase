@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroPhoto from "@/assets/images/hero-photo.webp";
+import heroPhoto from "@/assets/images/hero-photo.jpg";
 import { PhoneMockup } from "./PhoneMockup";
 import { FloatingJobCard } from "./FloatingJobCard";
 import { showcaseJobs } from "@/content/hero";

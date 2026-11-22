@@ -1,31 +1,22 @@
-import { Navbar } from '@/components/Navbar';
-import { Hero } from '@/components/Hero';
-import { Features } from '@/components/Features';
-import { Footer } from '@/components/Footer';
+import { Hero } from "@/components/sections/hero/Hero";
+import { FeatureStrip } from "@/components/sections/FeatureStrip";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Impact } from "@/components/sections/Impact";
+import { EmployerCta } from "@/components/sections/EmployerCta";
+import { Faq } from "@/components/sections/Faq";
+import { buildMetadata } from "@/lib/seo";
 
-export default function Home() {
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Wakajob',
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Web, Android, iOS',
-    description: 'A location-based job search platform for opportunities across Cameroon.',
-    url: 'https://wakajob.com',
-    areaServed: { '@type': 'Country', name: 'Cameroon' },
-  };
+export const metadata = buildMetadata({ path: "/" });
 
+export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <div>
-        <Navbar />
-        <main>
-          <Hero />
-          <Features />
-        </main>
-      </div>
-      <Footer />
-    </div>
+    <main id="main">
+      <Hero />
+      <FeatureStrip />
+      <HowItWorks />
+      <Impact />
+      <EmployerCta />
+      <Faq />
+    </main>
   );
 }

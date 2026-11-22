@@ -1,42 +1,58 @@
-import * as React from 'react';
-import { cn } from '@/lib/utils';
+import Link from "next/link";
+import { cn } from "@/lib/cn";
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+type Variant = "primary" | "secondary";
+type Size = "md" | "lg";
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors disabled:pointer-events-none disabled:opacity-50";
+
+const variants: Record<Variant, string> = {
+  primary: "bg-brand-600 text-white shadow-card hover:bg-brand-700",
+  secondary: "bg-brand-100 text-brand-700 hover:bg-brand-200",
+};
+
+const sizes: Record<Size, string> = {
+  md: "h-12 px-6 text-sm",
+  lg: "h-14 px-8 text-base",
+};
+
+type StyleProps = { variant?: Variant; size?: Size };
+
+export function buttonStyles({
+  variant = "primary",
+  size = "md",
+  className,
+}: StyleProps & { className?: string } = {}) {
+  return cn(base, variants[variant], sizes[size], className);
 }
 
-const variantClasses: Record<ButtonVariant, string> = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-500 shadow-sm',
-  secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 focus-visible:ring-slate-500',
-  ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 focus-visible:ring-gray-400',
-};
+export function Button({
+  variant,
+  size,
+  className,
+  type = "button",
+  ...props
+}: StyleProps & React.ComponentProps<"button">) {
+  return (
+    <button
+      type={type}
+      className={buttonStyles({ variant, size, className })}
+      {...props}
+    />
+  );
+}
 
-const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'h-9 px-3 text-sm',
-  md: 'h-10 px-4 text-sm',
-  lg: 'h-12 px-5 text-base',
-};
-
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', type = 'button', ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        type={type}
-        className={cn(
-          'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
-          variantClasses[variant],
-          sizeClasses[size],
-          className
-        )}
-        {...props}
-      />
-    );
-  }
-);
-
-Button.displayName = 'Button';
+export function ButtonLink({
+  variant,
+  size,
+  className,
+  ...props
+}: StyleProps & React.ComponentProps<typeof Link>) {
+  return (
+    <Link
+      className={buttonStyles({ variant, size, className })}
+      {...props}
+    />
+  );
+}
